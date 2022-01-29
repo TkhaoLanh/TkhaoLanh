@@ -63,7 +63,8 @@ public class CardGame {
         System.out.println(response);
         printInfo();
     }
-    public void printInfo(){
+    public static void printInfo(){
+        System.out.println("I'm Done!!!");
         System.out.println("My name is Tkhao Lanh, I am from Ukraine");
     }
 }
