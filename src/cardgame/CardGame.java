@@ -61,6 +61,7 @@ public class CardGame {
         String response = match ? "Right guess" : "No match";
 
         System.out.println(response);
+        printInfo();
     }
     public void printInfo(){
         System.out.println("My name is Tkhao Lanh, I am from Ukraine");
