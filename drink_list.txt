@@ -1,0 +1,5 @@
+1,Roast Coffee,1.75
+2,Green Tea,1.80
+3,Peppermint Tea,1.50
+4,Latte (2% Milk),3.50
+5,Cappuccino,3.60
