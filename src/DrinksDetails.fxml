@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="538.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="538.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DrinksDetailsController">
    <children>
       <Label layoutX="86.0" layoutY="14.0" text="DRINK DETAILS">
          <font>
@@ -53,7 +53,7 @@
             <Font size="20.0" />
          </font>
       </RadioButton>
-      <TextField layoutX="63.0" layoutY="128.0" prefHeight="40.0" prefWidth="169.0" text="PRODUCT NAME">
+      <TextField fx:id="txtName" layoutX="63.0" layoutY="128.0" prefHeight="40.0" prefWidth="169.0" text="PRODUCT NAME">
          <font>
             <Font size="19.0" />
          </font></TextField>

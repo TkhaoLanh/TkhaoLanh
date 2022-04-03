@@ -6,7 +6,17 @@ public class Drink{
     private int _drinkID;
     private String _drinkName;
     private double _drinkPrice;
+    /*
+    private String _imagePath;
 
+    public String getImagePath() {
+        return _imagePath;
+    }
+    public void setImagePath(String imagePath) {
+        _imagePath = imagePath;
+    }
+
+*/
     //getter and setter
     public int getDrinkID() {
         return _drinkID;
@@ -32,6 +42,7 @@ public class Drink{
         _drinkID = drinkID;
         _drinkName = drinkName;
         _drinkPrice = drinkPrice;
+       // _imagePath = imagePath;
     }
     
     public String toString() {

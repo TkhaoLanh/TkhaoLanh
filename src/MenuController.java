@@ -11,6 +11,8 @@ import javafx.stage.Stage;
 
 public class MenuController {
     static DrinkList _list = new DrinkList();
+    public String drinkType;
+    
     // Field variables for GUI controls should go here, with @FXML
     @FXML private Button btnHot;
     @FXML private Button btnCold;
@@ -18,11 +20,20 @@ public class MenuController {
     // Initializes the controller class. This method is automatically called after the FXML file has been loaded.
     @FXML private void initialize() {
         // Attach event handler(s)
-        btnHot.setOnAction( e -> onHotClicked() );    // Always call a method in the outer class
-        btnCold.setOnAction( e -> onColdClicked() );  // Always call a method in the outer class
+       btnHot.setOnAction( e -> { 
+            onHotClicked(); 
+         //btnHot.setOnAction(e -> onHotClicked());
+         //btnCold.setOnAction(e -> onHotClicked());
+            // _list.load("Hot");
+        });    // Always call a method in the outer class
+        btnCold.setOnAction( e -> { 
+            onColdClicked(); 
+            // _list.load("Cold");
+        });   // Always call a method in the outer class
 
         // Load the list from a file when the main window opens
-        _list.load();
+        //  _list.load(drinkType);
+        //_list.load();
     }
     // Event handlers
 
@@ -30,6 +41,8 @@ public class MenuController {
     private void onHotClicked() {
         // Open the DrinkList window (stage)
         try {
+            drinkType = "Hot";
+            _list.load(drinkType);
             Parent root = (AnchorPane)FXMLLoader.load(getClass().getResource("DrinkList.fxml"));
             Scene scene = new Scene(root);
             
@@ -45,6 +58,8 @@ public class MenuController {
     private void onColdClicked() {
         // Open the DrinkList window (stage)
         try {
+            drinkType = "Cold";
+            _list.load(drinkType);
             Parent root = (AnchorPane)FXMLLoader.load(getClass().getResource("DrinkList.fxml"));
             Scene scene = new Scene(root);
             

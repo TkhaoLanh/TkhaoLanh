@@ -6,14 +6,21 @@ import java.util.Scanner;
 
 public class DrinkList {
     // List of beverage
-    private ArrayList<Drink> _list = new ArrayList<Drink>();  
+    private ArrayList<Drink> _list;  
     
     // Load the list from a file.
-    public void load() {
+    public void load(String file) {
+        _list = new ArrayList<Drink>();
         Scanner reader = null;
         try {
-            File fileDescriptor = new File("drink_list.txt");
-            reader = new Scanner(fileDescriptor);
+            //File file;
+            //File fileCold = new File("drink_cold.txt");
+            if(file=="Hot"){
+                reader = new Scanner(new File("drink_list.txt"));
+            }
+            else{
+                reader = new Scanner(new File("drink_cold.txt"));
+            }
 
             while (reader.hasNext()) {
                 String record = reader.nextLine();
@@ -22,6 +29,7 @@ public class DrinkList {
                 int id = Integer.parseInt(fields[0]);
                 String name = fields[1];
                 double price = Double.parseDouble(fields[2]);
+               // String image = fields[3];
 
                 // Create a new object for each record
                 Drink obj = new Drink(id, name,price);
@@ -39,11 +47,18 @@ public class DrinkList {
     }
 
     // Save the list to a file.
-    public void save() {
+    public void save(String file) {
         PrintWriter writer = null;
         try {
-            File fileDescriptor = new File("drink_list.txt");
-            writer = new PrintWriter(fileDescriptor);
+            File fileHot = new File("drink_list.txt");
+            File fileCold = new File("drink_cold.txt");
+            if(file=="Hot"){
+                writer = new PrintWriter(fileHot);
+            }
+            else{
+                writer = new PrintWriter(fileCold);
+            }
+            
             for (int index = 0; index < _list.size(); index++) {
                 Drink dr = _list.get(index);
                 writer.println(dr.getDrinkID() + "," +
@@ -60,6 +75,7 @@ public class DrinkList {
             }
         }
     }
+    
     // Get a list item
     public Drink getDrink(int index) {
         return _list.get(index);
