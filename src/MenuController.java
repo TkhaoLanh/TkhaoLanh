@@ -22,21 +22,12 @@ public class MenuController {
         // Attach event handler(s)
        btnHot.setOnAction( e -> { 
             onHotClicked(); 
-         //btnHot.setOnAction(e -> onHotClicked());
-         //btnCold.setOnAction(e -> onHotClicked());
-            // _list.load("Hot");
         });    // Always call a method in the outer class
         btnCold.setOnAction( e -> { 
             onColdClicked(); 
-            // _list.load("Cold");
         });   // Always call a method in the outer class
 
-        // Load the list from a file when the main window opens
-        //  _list.load(drinkType);
-        //_list.load();
     }
-    // Event handlers
-
     // Click handler for OK button
     private void onHotClicked() {
         // Open the DrinkList window (stage)
